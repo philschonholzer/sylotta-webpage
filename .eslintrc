@@ -9,5 +9,9 @@
       }
     ],
     "prettier/prettier": "error"
-  }
+  },
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint"
 }
