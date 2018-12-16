@@ -18,8 +18,6 @@ Nach einer langen, befriedigenden Karriere im Spital, in Pflege und Ausbildung..
 
 ![Liisa am Steuer](/img/dsc09653.jpg)
 
-
-
 # Wolfgang
 
 25 Jahre Tierarztpraxis sind genug, sagte ich mir...
