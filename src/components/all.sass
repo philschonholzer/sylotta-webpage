@@ -1,13 +1,86 @@
-@import "~bulma/sass/utilities/initial-variables"
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800')
 
 // Config vars
-// Kalidi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
+$lotta-blue: #18182b
+$lotta-blue-invert: #fff
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $lotta-blue
+$primary-invert: $lotta-blue-invert
 $body-color: #333
+
+body
+  margin: 0
+  font-family: 'Open Sans', sans-serif
+
+.container
+  max-width: 1024px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 1em
+  padding-right: 1em
+
+.nav-container
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+
+.navbar 
+  position: sticky
+  top: 0
+  padding: .5em 0
+  color: $primary-invert
+  background-color: $primary
+  z-index: 90
+  a
+    color: $primary-invert
+
+  .menu-button
+    padding: 0.5em
+    margin-right: -0.5em
+    color: white
+    font-weight: 600
+    cursor: pointer
+
+    @media (min-width: 760px) 
+      display: none
+
+    &:active ~ .menu, &:focus ~ .menu
+      transform: translate3d(-20rem, 0px, 0px)
+
+  .menu
+    margin-right: -1em
+    @media (max-width: 759px) 
+      position: fixed
+      display: flex
+      flex-direction: column
+      font-size: 1.1em
+      top: 0
+      bottom: 0
+      right: -20rem
+      padding: 1em 4em 1em 1em
+      background-color: $primary
+      transition: all 200ms ease 200ms
+    
+    a 
+      display: inline-block
+      text-decoration: none
+      font-weight: 800
+      margin-left: 0.5em
+      margin-right: 0.5em
+      padding: 0.3em 0.5em
+      color: white
+
+      transition: transform 30ms ease-out
+
+      &:hover 
+        transform: translateY(-1px)
+
+      &:active 
+        color: lighten($primary, 50)
+
+
+
 
 .navbar .navbar-menu
   box-shadow:none !important
@@ -44,4 +117,4 @@ $body-color: #333
 .margin-top-0
   margin-top: 0 !important
 
-@import "~bulma"
+// @import "~bulma"
