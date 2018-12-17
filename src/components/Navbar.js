@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
 
 const Navbar = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main-navigation">
       <div className="container nav-container">
         <div>
-          <Link to="/#start" data-element="logo">
+          <Link to="/" data-element="logo">
             SY Lotta
           </Link>
         </div>
