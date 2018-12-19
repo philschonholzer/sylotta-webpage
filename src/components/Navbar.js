@@ -18,7 +18,13 @@ const Navbar = () => {
           <Link to="/trips">Reise</Link>
           <Link to="/about">Über uns</Link>
           <Link to="/contact">Kontakt</Link>
-          <Link to="/contact/examples">Blog</Link>
+          <a
+            href="http://wolfschon.blogspot.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Blog
+          </a>
           <a
             className="navbar-item"
             href="/admin"
