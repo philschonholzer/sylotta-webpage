@@ -11,20 +11,31 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Img fluid={data.hero.fluid}>
-        <h1>Hallo</h1>
-      </Img>
+      <div style={{ position: 'relative' }}>
+        <Img fluid={data.hero.fluid} />
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            fontSize: '3em',
+            color: 'white',
+            textAlign: 'right',
+          }}
+        >
+          <div className="container">
+            <h1 style={{ marginBottom: 0 }}>SY Lotta</h1>
+            <p style={{ marginTop: 0 }}>Mal sehen wo es uns hinspühlt...</p>
+          </div>
+        </div>
+      </div>
       <section className="section">
         <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
+          <h2 className="has-text-weight-bold is-size-2">Letzter Bericht</h2>
           {posts.map(({ node: post }) => (
-            <div
-              className="content"
-              style={{ border: '1px solid #333', padding: '2em 4em' }}
-              key={post.id}
-            >
+            <div key={post.id}>
               <p>
                 <Link className="has-text-primary" to={post.fields.slug}>
                   {post.frontmatter.title}
@@ -34,14 +45,12 @@ const IndexPage = ({ data }) => {
               </p>
               <p>
                 <HTMLContent content={post.html} />
-                <br />
-                <br />
-                <Link className="button is-small" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
               </p>
             </div>
           ))}
+          <Link className="button is-small" to="trips">
+            Weitere Berichte
+          </Link>
         </div>
       </section>
     </Layout>
@@ -75,7 +84,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD.MM.YYYY")
           }
         }
       }
