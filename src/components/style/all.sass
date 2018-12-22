@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800')
+@import './colors.sass'
+
+body
+  margin: 0
+  font-family: 'Open Sans', sans-serif
+  color: $primary
+
+h1, h2, h3, h4, p 
+  margin-top: 0
+
+h1
+  font-size: 2em
+
+
+a
+  color: $primary
+  
+  
+.container
+  max-width: 1024px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 1em
+  padding-right: 1em
+
+
+header 
+  font-size: 1.2em
+  padding: 3em 0 2em
+  background-color: $primary
+  color: white
+
+
+section 
+  padding: 3em 0
+
+  &.odd:nth-child(2n)
+    background-color: #eee
+
+  &.even:nth-child(2n+1)
+    background-color: #eee
+
+
+.row
+  @media (min-width: 720px)
+    display: grid
+    grid-gap: 2em
+    grid-template-columns: 14rem 1fr
+
+
+.flex-space-between
+  display: flex
+  justify-content: space-between
+
+input, textarea, button
+  font-size: 1em
+  width: 100%
+  max-width: 20em
+  border: 1px solid #999
+  border-radius: 2px
+  padding: .6em .4em
+  margin-bottom: 1em
+
+
+.button 
+  display: inline-block
+  font-weight: 800
+  padding: .5em 1.8em
+  border: 2px solid $primary
+  border-radius: 4px
+  background: $primary-invert
+  text-decoration: none
+  text-align: center
+  transition: transform .1s, color .1s, background-color .4s
+
+  &:hover 
+    color: $primary-invert
+    background-color: $primary
+    transform: translateY(-2px)
+
+
+
+.align-right 
+  text-align: right
+
+
+
+
+
+.hero-wrapper
+  position: relative
+  margin-bottom: 2em
+
+  .hero-content
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    font-size: 4vw
+    text-align: right
+
+    p
+      margin-top: 1em
+      color: white
+
+    @media (min-width: 540px)
+      font-size: 3vw
+

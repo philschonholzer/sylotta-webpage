@@ -11,46 +11,68 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <div style={{ position: 'relative' }}>
+      <div className="hero-wrapper">
         <Img fluid={data.hero.fluid} />
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            fontSize: '3em',
-            color: 'white',
-            textAlign: 'right',
-          }}
-        >
+        <div className="hero-content">
           <div className="container">
-            <h1 style={{ marginBottom: 0 }}>SY Lotta</h1>
-            <p style={{ marginTop: 0 }}>Mal sehen wo es uns hinspühlt...</p>
+            <p style={{ marginBottom: 0 }}>Mal sehen wo es uns hinspühlt...</p>
+            <h1 style={{ marginTop: 0 }}>SY Lotta</h1>
           </div>
         </div>
       </div>
-      <section className="section">
+      <section className="even">
         <div className="container">
-          <h2 className="has-text-weight-bold is-size-2">Letzter Bericht</h2>
-          {posts.map(({ node: post }) => (
-            <div key={post.id}>
+          <div className="row">
+            <h2>Unsere Reise</h2>
+            <p>
+              Wir sind seid dem 30. April 2016 mit unserem Segelschiff Lotta auf
+              den Weltmeeren unterwegs.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="even">
+        <div className="container">
+          <div className="row">
+            <h2>Blog</h2>
+            <div>
               <p>
-                <Link className="has-text-primary" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <small>{post.frontmatter.date}</small>
+                In unserem Blog findet ihr regelmässig neue Berichte über unsere
+                Reise.
               </p>
-              <p>
-                <HTMLContent content={post.html} />
-              </p>
+              <a className="button" href="https://wolfschon.blogspot.com">
+                Zum Blog
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container row">
+          {posts.map(({ node: post }) => (
+            <>
+              <div>
+                <h2 className="has-text-weight-bold is-size-2">
+                  Letzte Segelfahrten
+                </h2>
+                <p>
+                  <Link className="has-text-primary" to={post.fields.slug}>
+                    {post.frontmatter.title}
+                  </Link>
+                  <span> &bull; </span>
+                  <small>{post.frontmatter.date}</small>
+                </p>
+              </div>
+              <div key={post.id}>
+                <p>
+                  <HTMLContent content={post.html} />
+                </p>
+                <Link className="button is-small" to="trips">
+                  Alle Segelfahrten
+                </Link>
+              </div>
+            </>
           ))}
-          <Link className="button is-small" to="trips">
-            Weitere Berichte
-          </Link>
         </div>
       </section>
     </Layout>

@@ -1,9 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+import './style/all.sass'
 import Navbar from './Navbar'
-import './all.sass'
+import Footer from './Footer'
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery
@@ -59,9 +61,14 @@ const TemplateWrapper = ({ children }) => (
         </Helmet>
         <Navbar />
         <div>{children}</div>
+        <Footer />
       </>
     )}
   />
 )
 
 export default TemplateWrapper
+
+TemplateWrapper.propTypes = {
+  children: PropTypes.node,
+}

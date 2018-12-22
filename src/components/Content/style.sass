@@ -1,0 +1,19 @@
+.markdown-content
+  h1, h2
+    padding-top: 3rem
+
+  @media (min-width: 720px)
+    &.heading-left
+      display: grid
+      grid-template-columns: 16rem 1fr
+      grid-gap: 2em
+
+      h1, h2
+        grid-column: 1
+
+        & + *
+          padding-top: 3rem
+
+      & *
+        grid-column: 2
+

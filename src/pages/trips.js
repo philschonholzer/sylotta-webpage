@@ -9,25 +9,26 @@ const TripPage = ({ data }) => {
 
   return (
     <Layout>
-      <section className="section">
+      <header>
         <div className="container">
-          <h1 className="has-text-weight-bold is-size-2">Alle Reiseberichte</h1>
-          {posts.map(({ node: post }) => (
-            <div className="content" key={post.id}>
+          <h1 className="has-text-weight-bold is-size-2">Segelfahrten</h1>
+        </div>
+      </header>
+      {posts.map(({ node: post }) => (
+        <section className="even" key={post.id}>
+          <div className="container">
+            <div className="row">
               <p>
-                <Link className="has-text-primary" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
+                <h2 style={{ marginBottom: 0 }}>{post.frontmatter.title}</h2>
                 <small>{post.frontmatter.date}</small>
               </p>
               <p>
                 <HTMLContent content={post.html} />
               </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ))}
     </Layout>
   )
 }
