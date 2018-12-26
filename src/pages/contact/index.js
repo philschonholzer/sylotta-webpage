@@ -36,10 +36,14 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
+        <header>
+          <div className="container">
+            <h1 className="has-text-weight-bold is-size-2">Kontakt</h1>
+          </div>
+        </header>
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Kontakt</h1>
               <form
                 name="contact"
                 method="post"
