@@ -1,35 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import { HTMLContent } from '../components/Content'
 import Position from '../components/Position'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const IndexPage = ({ data }) => {
-  console.log('data', data)
-  const { edges: posts } = data.allMarkdownRemark
+  const { edges: posts } = data.lasttrip
+  const { title, tagline, intro, blog } = data.markdownRemark.frontmatter
+  const { heading: introHeading, text: introText, image: introImage } = intro
+  const { heading: blogHeading, text: blogText } = blog
 
   return (
     <Layout>
       <div className="hero-wrapper">
-        <Img fluid={data.hero.fluid} />
+        <PreviewCompatibleImage imageInfo={data.markdownRemark.frontmatter} />
         <div className="hero-content">
           <div className="container">
-            <p style={{ marginBottom: 0 }}>Mal sehen wo es uns hinspühlt...</p>
-            <h1 style={{ marginTop: 0 }}>SY Lotta</h1>
+            <p style={{ marginBottom: 0 }}>{tagline}</p>
+            <h1 style={{ marginTop: 0 }}>{title}</h1>
           </div>
         </div>
       </div>
       <section className="even">
         <div className="container">
           <div className="row">
-            <h2>Unsere Reise</h2>
+            <h2>{introHeading}</h2>
             <div>
-              <p>
-                Wir sind seid dem 30. April 2016 mit unserem Segelschiff Lotta
-                auf den Weltmeeren unterwegs.
-              </p>
+              <p>{introText}</p>
+              {introImage && (
+                <PreviewCompatibleImage
+                  imageInfo={introImage}
+                  imageStyle={{ marginBottom: '1em' }}
+                />
+              )}
               <Link className="button" to="about">
                 Mehr
               </Link>
@@ -40,12 +45,9 @@ const IndexPage = ({ data }) => {
       <section className="even">
         <div className="container">
           <div className="row">
-            <h2>Blog</h2>
+            <h2>{blogHeading}</h2>
             <div>
-              <p>
-                In unserem Blog findet ihr regelmässig neue Berichte über unsere
-                Reise.
-              </p>
+              <p>{blogText}</p>
               <a className="button" href="https://wolfschon.blogspot.com">
                 Zum Blog
               </a>
@@ -102,8 +104,40 @@ IndexPage.propTypes = {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
+  query IndexQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      html
+      frontmatter {
+        title
+        tagline
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        intro {
+          heading
+          text
+          image {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
+        }
+        blog {
+          heading
+          text
+        }
+      }
+    }
+    lasttrip: allMarkdownRemark(
       limit: 1
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { templateKey: { eq: "trip-post" } } }
@@ -121,11 +155,6 @@ export const pageQuery = graphql`
             date(formatString: "DD.MM.YYYY")
           }
         }
-      }
-    }
-    hero: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
-      fluid(maxWidth: 2400) {
-        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }

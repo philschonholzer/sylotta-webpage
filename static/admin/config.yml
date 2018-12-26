@@ -36,9 +36,9 @@ collections:
           widget: 'hidden',
           default: 'trip-post',
         }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Titel', name: 'title', widget: 'string' }
+      - { label: 'Datum', name: 'date', widget: 'datetime' }
+      - { label: 'Inhalt', name: 'body', widget: 'markdown' }
 
   - name: 'pages'
     label: 'Pages'
@@ -53,8 +53,54 @@ collections:
               widget: 'hidden',
               default: 'about-page',
             }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Inhalt', name: 'body', widget: 'markdown' }
+
+      - file: 'src/pages/index.md'
+        label: 'Startseite'
+        name: 'index'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'index-page',
+            }
+          - { label: Titel, name: title, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Inhalt, name: body, widget: markdown }
+          - { label: Bild, name: image, widget: image }
+          - {
+              label: Einführung,
+              name: intro,
+              widget: object,
+              fields:
+                [
+                  { label: Überschrift, name: heading, widget: string },
+                  { label: Text, name: text, widget: text },
+                  {
+                    label: Bild,
+                    name: image,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Bild, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Blog,
+              name: blog,
+              widget: object,
+              fields:
+                [
+                  { label: Überschrift, name: heading, widget: string },
+                  { label: Text, name: text, widget: text },
+                ],
+            }
+
       - file: 'src/pages/products/index.md'
         label: 'Products Page'
         name: 'products'
