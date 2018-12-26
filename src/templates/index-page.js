@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import { HTMLContent } from '../components/Content'
 import Position from '../components/Position'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
@@ -59,7 +58,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="even">
         {posts.map(({ node: post }) => (
-          <div className="container heading-col" key={post.id}>
+          <div className="container split-col" key={post.id}>
             <div>
               <h2 className="has-text-weight-bold is-size-2">
                 Letzte Segelfahrten
@@ -71,12 +70,13 @@ const IndexPage = ({ data }) => {
                 <span> &bull; </span>
                 <small>{post.frontmatter.date}</small>
               </p>
-            </div>
-            <div key={post.id}>
-              <HTMLContent content={post.html} />
+              <p>{post.excerpt}</p>
               <Link className="button is-small" to="trips">
-                Alle Segelfahrten
+                Weiter
               </Link>
+            </div>
+            <div>
+              <PreviewCompatibleImage imageInfo={post.frontmatter.image} />
             </div>
           </div>
         ))}
@@ -136,13 +136,20 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          html
+          excerpt(pruneLength: 400)
           id
           fields {
             slug
           }
           frontmatter {
             title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             templateKey
             date(formatString: "DD.MM.YYYY")
           }

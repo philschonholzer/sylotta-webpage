@@ -3,8 +3,14 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-export const TripPostTemplate = ({ title, content, contentComponent }) => {
+export const TripPostTemplate = ({
+  title,
+  image,
+  content,
+  contentComponent,
+}) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -17,6 +23,7 @@ export const TripPostTemplate = ({ title, content, contentComponent }) => {
                 {title}
               </h2>
               <PageContent className="content" content={content} />
+              <PreviewCompatibleImage imageInfo={image} />
             </div>
           </div>
         </div>
@@ -27,6 +34,7 @@ export const TripPostTemplate = ({ title, content, contentComponent }) => {
 
 TripPostTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
@@ -39,6 +47,7 @@ const TripPost = ({ data }) => {
       <TripPostTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        image={post.frontmatter.image}
         content={post.html}
       />
     </Layout>
@@ -57,6 +66,13 @@ export const tripPostQuery = graphql`
       html
       frontmatter {
         title
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const TripPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
@@ -24,6 +25,7 @@ const TripPage = ({ data }) => {
               </p>
               <p>
                 <HTMLContent content={post.html} />
+                <PreviewCompatibleImage imageInfo={post.frontmatter.image} />
               </p>
             </div>
           </div>
@@ -58,6 +60,13 @@ export const pageQuery = graphql`
           html
           frontmatter {
             title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             templateKey
             date(formatString: "MMMM DD, YYYY")
           }
