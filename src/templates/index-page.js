@@ -24,27 +24,25 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <section className="even">
-        <div className="container">
-          <div className="row">
+        <div className="container split-col">
+          <div>
             <h2>{introHeading}</h2>
-            <div>
-              <p>{introText}</p>
-              {introImage && (
-                <PreviewCompatibleImage
-                  imageInfo={introImage}
-                  imageStyle={{ marginBottom: '1em' }}
-                />
-              )}
-              <Link className="button" to="about">
-                Mehr
-              </Link>
-            </div>
+            <p>{introText}</p>
+            <Link className="button" to="about">
+              Mehr
+            </Link>
           </div>
+          {introImage && (
+            <PreviewCompatibleImage
+              imageInfo={introImage}
+              imageStyle={{ marginBottom: '1em' }}
+            />
+          )}
         </div>
       </section>
-      <section className="even">
-        <div className="container">
-          <div className="row">
+      <section id="position" className="even">
+        <div className="container split-col">
+          <div>
             <h2>{blogHeading}</h2>
             <div>
               <p>{blogText}</p>
@@ -53,21 +51,15 @@ const IndexPage = ({ data }) => {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="even">
-        <div className="container">
-          <div className="row">
+          <div>
             <h2>Aktuelle Position</h2>
-            <div>
-              <Position />
-            </div>
+            <Position />
           </div>
         </div>
       </section>
       <section className="even">
         {posts.map(({ node: post }) => (
-          <div className="container row" key={post.id}>
+          <div className="container heading-col" key={post.id}>
             <div>
               <h2 className="has-text-weight-bold is-size-2">
                 Letzte Segelfahrten

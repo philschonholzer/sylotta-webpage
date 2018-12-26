@@ -17,7 +17,7 @@ const TripPage = ({ data }) => {
       {posts.map(({ node: post }) => (
         <section className="even" key={post.id}>
           <div className="container">
-            <div className="row">
+            <div className="heading-col">
               <p>
                 <h2 style={{ marginBottom: 0 }}>{post.frontmatter.title}</h2>
                 <small>{post.frontmatter.date}</small>
