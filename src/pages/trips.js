@@ -19,14 +19,14 @@ const TripPage = ({ data }) => {
         <section className="even" key={post.id}>
           <div className="container">
             <div className="heading-col">
-              <p>
+              <div>
                 <h2 style={{ marginBottom: 0 }}>{post.frontmatter.title}</h2>
                 <small>{post.frontmatter.date}</small>
-              </p>
-              <p>
+              </div>
+              <div>
                 <HTMLContent content={post.html} />
-                <PreviewCompatibleImage imageInfo={post.frontmatter.image} />
-              </p>
+                <PreviewCompatibleImage imageInfo={post.frontmatter} />
+              </div>
             </div>
           </div>
         </section>
