@@ -5,8 +5,8 @@ import { TripPostTemplate } from '../../templates/trip-post'
 const TripPostPreview = ({ entry, widgetFor }) => (
   <TripPostTemplate
     content={widgetFor('body')}
-    description={entry.getIn(['data', 'description'])}
     title={entry.getIn(['data', 'title'])}
+    image={entry.getIn(['data', 'image'])}
   />
 )
 

@@ -5,16 +5,22 @@ import Layout from '../components/Layout'
 import Position from '../components/Position'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-const IndexPage = ({ data }) => {
-  const { edges: posts } = data.lasttrip
-  const { title, tagline, intro, blog } = data.markdownRemark.frontmatter
+export const IndexPageTemplate = ({
+  title,
+  tagline,
+  image,
+  intro,
+  blog,
+  lasttrip,
+}) => {
+  const { edges: posts } = lasttrip
   const { heading: introHeading, text: introText, image: introImage } = intro
   const { heading: blogHeading, text: blogText } = blog
 
   return (
     <Layout>
       <div className="hero-wrapper">
-        <PreviewCompatibleImage imageInfo={data.markdownRemark.frontmatter} />
+        <PreviewCompatibleImage imageInfo={{ image }} />
         <div className="hero-content">
           <div className="container">
             <p style={{ marginBottom: 0 }}>{tagline}</p>
@@ -76,12 +82,32 @@ const IndexPage = ({ data }) => {
               </Link>
             </div>
             <div>
-              <PreviewCompatibleImage imageInfo={post.frontmatter.image} />
+              <PreviewCompatibleImage imageInfo={post.frontmatter} />
             </div>
           </div>
         ))}
       </section>
     </Layout>
+  )
+}
+
+IndexPageTemplate.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  tagline: PropTypes.string.isRequired,
+  intro: PropTypes.object.isRequired,
+  blog: PropTypes.object.isRequired,
+  lasttrip: PropTypes.object.isRequired,
+}
+
+const IndexPage = ({ data }) => {
+  const { lasttrip } = data
+
+  return (
+    <IndexPageTemplate
+      lasttrip={lasttrip}
+      {...data.markdownRemark.frontmatter}
+    />
   )
 }
 
