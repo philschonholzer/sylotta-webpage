@@ -9,8 +9,8 @@ intro:
     alt: A close-up of a paper filter filled with ground coffee
     image: /img/dsc00063.jpg
   text: >
-    Wir sind seid dem 30. April 2016 mit unserem Segelschiff Lotta auf den
-    Weltmeeren unterwegs.
+    Wir berichten so regelmässig von unserer Segelreise, wie es der Zugang und
+    die Qualität des lokales Netzes uns erlauben...
 blog:
   heading: Blog
   text: |
