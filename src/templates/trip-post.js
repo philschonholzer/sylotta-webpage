@@ -23,7 +23,7 @@ export const TripPostTemplate = ({
                 {title}
               </h2>
               <PageContent className="content" content={content} />
-              <PreviewCompatibleImage imageInfo={image} />
+              {image && <PreviewCompatibleImage imageInfo={image} />}
             </div>
           </div>
         </div>

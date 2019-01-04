@@ -60,27 +60,55 @@ export const IndexPageTemplate = ({
       </section>
       <section className="even">
         {posts.map(({ node: post }) => (
-          <div className="container split-col" key={post.id}>
-            <div>
-              <h2 className="has-text-weight-bold is-size-2">
-                Letzte Segelfahrten
-              </h2>
-              <p>
-                <Link className="has-text-primary" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <small>{post.frontmatter.date}</small>
-              </p>
-              <p>{post.excerpt}</p>
-              <Link className="button is-small" to="trips">
-                Weiter
-              </Link>
-            </div>
-            <div>
-              <PreviewCompatibleImage imageInfo={post.frontmatter} />
-            </div>
-          </div>
+          <>
+            {post.frontmatter.image ? (
+              <div className="container split-col" key={post.id}>
+                <div>
+                  <h2 className="has-text-weight-bold is-size-2">
+                    Letzte Segelfahrten
+                  </h2>
+                  <p>
+                    <Link className="has-text-primary" to={post.fields.slug}>
+                      {post.frontmatter.title}
+                    </Link>
+                    <span> &bull; </span>
+                    <small>{post.frontmatter.date}</small>
+                  </p>
+                  <p>{post.excerpt}</p>
+                  <Link className="button is-small" to="trips">
+                    Weiter
+                  </Link>
+                </div>
+                <div>
+                  <PreviewCompatibleImage imageInfo={post.frontmatter} />
+                </div>
+              </div>
+            ) : (
+              <div className="container split-col" key={post.id}>
+                <h2 className="has-text-weight-bold is-size-2">
+                  Letzte Segelfahrten
+                </h2>
+                <div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'baseline',
+                    }}
+                  >
+                    <h2>{post.frontmatter.title}</h2>
+                    <small>
+                      <span>&nbsp;&bull; </span>
+                      {post.frontmatter.date}
+                    </small>
+                  </div>
+                  <p>{post.excerpt}</p>
+                  <Link className="button is-small" to="trips">
+                    Weiter
+                  </Link>
+                </div>
+              </div>
+            )}
+          </>
         ))}
       </section>
     </Layout>
