@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://sylotta.netlify.com/* https://sylotta.ch/:splat 301!
