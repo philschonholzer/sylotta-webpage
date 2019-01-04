@@ -36,6 +36,13 @@ export const IndexPageTemplate = ({
             <Link className="button" to="about">
               Mehr
             </Link>
+            <div style={{ paddingTop: '4em' }}>
+              <h2>{blogHeading}</h2>
+              <p>{blogText}</p>
+              <a className="button" href="https://wolfschon.blogspot.com">
+                Zum Blog
+              </a>
+            </div>
           </div>
           {introImage && (
             <PreviewCompatibleImage
@@ -46,20 +53,9 @@ export const IndexPageTemplate = ({
         </div>
       </section>
       <section id="position" className="even">
-        <div className="container split-col">
-          <div>
-            <h2>{blogHeading}</h2>
-            <div>
-              <p>{blogText}</p>
-              <a className="button" href="https://wolfschon.blogspot.com">
-                Zum Blog
-              </a>
-            </div>
-          </div>
-          <div>
-            <h2>Aktuelle Position</h2>
-            <Position />
-          </div>
+        <div className="container">
+          <h2>Aktuelle Position</h2>
+          <Position />
         </div>
       </section>
       <section className="even">
