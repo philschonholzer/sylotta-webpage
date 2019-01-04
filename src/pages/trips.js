@@ -25,7 +25,9 @@ const TripPage = ({ data }) => {
               </div>
               <div>
                 <HTMLContent content={post.html} />
-                <PreviewCompatibleImage imageInfo={post.frontmatter} />
+                {post.frontmatter.image && (
+                  <PreviewCompatibleImage imageInfo={post.frontmatter} />
+                )}
               </div>
             </div>
           </div>
