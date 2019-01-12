@@ -60,6 +60,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-netlify-cache',
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        allPageHeaders: [
+          'Link: <https://fonts.googleapis.com/css?family=Open+Sans:400,800>; rel=preload; as=stylesheet',
+        ],
+      },
+    },
   ],
 }
