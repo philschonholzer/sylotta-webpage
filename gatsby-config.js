@@ -2,6 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'SY Lotta',
     description: "SY Lotta - 'mal sehen wo's uns hinspült....",
+    url: 'https://sylotta.ch',
+    image: 'https://sylotta.ch/img/default.jpg',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

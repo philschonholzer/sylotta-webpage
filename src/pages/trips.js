@@ -4,12 +4,19 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import SEO from '../components/SEO'
 
 const TripPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
 
   return (
     <Layout>
+      <SEO
+        title="Segelfahrten"
+        description="Wir berichten so regelmässig von unserer Segelreise, wie es der Zugang und
+    die Qualität des lokales Netzes uns erlauben..."
+      />
+
       <header>
         <div className="container">
           <h1 className="has-text-weight-bold is-size-2">Segelfahrten</h1>

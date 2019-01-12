@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import SEO from '../components/SEO'
 
 export const TripPostTemplate = ({
   title,
@@ -44,6 +45,12 @@ const TripPost = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.excerpt}
+        image={post.frontmatter.image.childImageSharp.resize.src}
+      />
+
       <TripPostTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
@@ -64,12 +71,16 @@ export const tripPostQuery = graphql`
   query TripPost($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      excerpt(pruneLength: 200)
       frontmatter {
         title
         image {
           childImageSharp {
             fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
+            }
+            resize(width: 1200, height: 630, cropFocus: ENTROPY) {
+              src
             }
           }
         }

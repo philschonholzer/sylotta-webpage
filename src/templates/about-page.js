@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import SEO from '../components/SEO'
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -40,6 +41,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
@@ -59,6 +61,7 @@ export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      excerpt(pruneLength: 200)
       frontmatter {
         title
       }

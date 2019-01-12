@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Position from '../components/Position'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import SEO from '../components/SEO'
 
 export const IndexPageTemplate = ({
   title,
@@ -19,6 +20,7 @@ export const IndexPageTemplate = ({
 
   return (
     <Layout>
+      <SEO />
       <div className="hero-wrapper">
         <PreviewCompatibleImage imageInfo={{ image }} />
         <div className="hero-content">

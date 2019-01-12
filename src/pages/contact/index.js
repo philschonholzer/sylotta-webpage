@@ -1,6 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
+import SEO from '../../components/SEO'
 
 function encode(data) {
   return Object.keys(data)
@@ -36,6 +37,11 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
+        <SEO
+          title="Kontakt"
+          description="Kontaktformular um Nachrichten zu übermitteln"
+        />
+
         <header>
           <div className="container">
             <h1 className="has-text-weight-bold is-size-2">Kontakt</h1>
