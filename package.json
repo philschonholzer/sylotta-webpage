@@ -9,6 +9,7 @@
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cache": "^1.0.0",
     "gatsby-plugin-netlify-cms": "^3.0.9",
+    "gatsby-plugin-prefetch-google-fonts": "^1.1.1",
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sharp": "^2.0.15",
@@ -36,7 +37,7 @@
   "scripts": {
     "start": "npm run develop",
     "clean": "rimraf .cache public",
-    "build": "npm run clean && gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "lint": "eslint src -c .eslintrc --ext js,jsx",

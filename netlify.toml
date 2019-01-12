@@ -4,9 +4,3 @@
 [build.environment]
   YARN_VERSION = "1.9.4"
   YARN_FLAGS = "--no-ignore-optional"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-
-    Link = "<https://fonts.googleapis.com/css?family=Open+Sans:400,800>; rel=preload; as=stylesheet"
