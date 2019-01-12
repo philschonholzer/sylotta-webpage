@@ -42,7 +42,7 @@ export const IndexPageTemplate = ({
               <h2>{blogHeading}</h2>
               <p>{blogText}</p>
               <a className="button" href="https://wolfschon.blogspot.com">
-                Zum Blog
+                Zum Blog &#8599;
               </a>
             </div>
           </div>
