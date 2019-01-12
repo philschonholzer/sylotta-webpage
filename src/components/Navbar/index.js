@@ -16,6 +16,7 @@ const Navbar = () => (
         Menu
       </div>
       <div className="menu">
+        <Link to="/gallery">Gallerie</Link>
         <Link to="/trips">Segelfahrten</Link>
         <Link to="/about">Über uns</Link>
         <Link to="/contact">Kontakt</Link>

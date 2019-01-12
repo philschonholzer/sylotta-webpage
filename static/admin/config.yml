@@ -23,6 +23,32 @@ collections:
       - { label: 'Datum', name: 'date', widget: 'datetime' }
       - { label: 'Inhalt', name: 'body', widget: 'markdown' }
 
+  - name: 'gallery'
+    label: 'Gallery'
+    folder: 'src/pages/gallery'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'gallery',
+        }
+      - { label: 'Titel', name: 'title', widget: 'string' }
+      - { label: 'Datum', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Bilder',
+          name: 'images',
+          widget: 'list',
+          fields:
+            [
+              { label: Bild, name: image, widget: image },
+              { label: Text, name: text, widget: text },
+            ],
+        }
+      - { label: 'Inhalt', name: 'body', widget: 'markdown' }
+
   - name: 'pages'
     label: 'Pages'
     files:
