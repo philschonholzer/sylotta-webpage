@@ -48,7 +48,10 @@ const TripPost = ({ data }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.excerpt}
-        image={post.frontmatter.image.childImageSharp.resize.src}
+        image={
+          post.frontmatter.image &&
+          post.frontmatter.image.childImageSharp.resize.src
+        }
       />
 
       <TripPostTemplate
