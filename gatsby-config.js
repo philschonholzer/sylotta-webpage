@@ -60,13 +60,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-netlify-cache',
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        allPageHeaders: [
-          'Link: <https://fonts.googleapis.com/css?family=Open+Sans:400,800>; rel=preload; as=stylesheet',
-        ],
-      },
-    },
+    `gatsby-plugin-netlify`,
   ],
 }
