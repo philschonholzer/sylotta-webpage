@@ -7,7 +7,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 const TemplateWrapper = ({ children }) => (
-  <>
+  <div id="layout">
     <Helmet>
       <html lang="de" />
 
@@ -35,7 +35,7 @@ const TemplateWrapper = ({ children }) => (
     <Navbar />
     <main>{children}</main>
     <Footer />
-  </>
+  </div>
 )
 
 export default TemplateWrapper
