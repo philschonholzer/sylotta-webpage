@@ -22,7 +22,9 @@ const Gallery = ({
         return (
           <section>
             <div key={node.id} className="container">
-              <h2>{title}</h2>
+              <h2>
+                {title} <small>{date}</small>
+              </h2>
               <HTMLContent content={node.html} />
               <GalleryCmp images={images} />
             </div>
@@ -69,7 +71,7 @@ export const pageQuery = graphql`
               text
             }
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD. MMMM YYYY")
           }
         }
       }
