@@ -47,7 +47,7 @@ const TripPost = ({ data }) => {
     <Layout>
       <SEO
         title={post.frontmatter.title}
-        description={post.frontmatter.excerpt}
+        description={post.excerpt}
         image={
           post.frontmatter.image &&
           post.frontmatter.image.childImageSharp.resize.src

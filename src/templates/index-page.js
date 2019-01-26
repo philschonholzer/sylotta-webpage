@@ -62,9 +62,9 @@ export const IndexPageTemplate = ({
       </section>
       <section className="even">
         {posts.map(({ node: post }) => (
-          <>
+          <React.Fragment key={post.id}>
             {post.frontmatter.image ? (
-              <div className="container split-col" key={post.id}>
+              <div className="container split-col">
                 <div>
                   <h2 className="has-text-weight-bold is-size-2">
                     Letzte Segelfahrten
@@ -86,7 +86,7 @@ export const IndexPageTemplate = ({
                 </div>
               </div>
             ) : (
-              <div className="container split-col" key={post.id}>
+              <div className="container split-col">
                 <h2 className="has-text-weight-bold is-size-2">
                   Letzte Segelfahrten
                 </h2>
@@ -110,7 +110,7 @@ export const IndexPageTemplate = ({
                 </div>
               </div>
             )}
-          </>
+          </React.Fragment>
         ))}
       </section>
     </Layout>
