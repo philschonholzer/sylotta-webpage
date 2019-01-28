@@ -39,6 +39,9 @@ const Navbar = () => (
             <Link to="/trips">Segelfahrten</Link>
             <Link to="/about">Über uns</Link>
             <Link to="/contact">Kontakt</Link>
+            <a className="button" href="https://wolfschon.blogspot.com">
+              Zum Blog &#8599;
+            </a>
           </div>
         </div>
       </nav>
