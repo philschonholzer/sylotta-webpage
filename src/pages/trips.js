@@ -19,7 +19,7 @@ const TripPage = ({ data }) => {
 
       <header>
         <div className="container">
-          <h1 className="has-text-weight-bold is-size-2">Segelfahrten</h1>
+          <h1 className="has-text-weight-bold is-size-2">Reise</h1>
         </div>
       </header>
       {posts.map(({ node: post }) => (
@@ -77,7 +77,7 @@ export const pageQuery = graphql`
               }
             }
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD.MM.YYYY")
           }
         }
       }

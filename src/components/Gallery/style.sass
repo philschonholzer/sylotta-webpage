@@ -1,0 +1,102 @@
+@import '../style/colors.sass'
+
+div.gallery 
+  display: grid
+  grid-gap: .2em
+  grid-auto-rows: 8.4em
+  grid-auto-flow: dense
+  @media (min-width: 480px)
+    grid-template-columns: repeat(auto-fill, minmax(4.8em, 1fr))
+
+  .item
+    position: relative
+    cursor: pointer
+    
+    &.portrait
+      grid-row: span 2
+
+    @media (min-width: 480px)
+      &.landscape
+        grid-column: span 3
+
+      &.portrait
+        grid-row: span 2
+        grid-column: span 2
+
+      &.square
+        grid-column: span 2
+
+      &:first-child
+        grid-area: 1/1/span 2/span 3
+
+    .gatsby-image-wrapper
+      height: 100%
+
+    .image-overlay
+      display: none
+
+    &:hover .image-overlay
+      display: block
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      margin: 0
+      font-size: .8em
+      padding: .2em .6em
+      color: white
+      background-color: hsla(0, 0%, 0%, .8)
+
+div.modal
+  position: fixed
+  display: grid
+  justify-items: center
+  align-items: center
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  padding: 2rem
+  background-color: hsla(0, 0%, 0%, 0.98)
+  text-align: center
+  z-index: 999
+
+  .close-button
+    position: absolute
+    top: 1em
+    right: 1em
+    stroke-width: 4
+    stroke: #888
+    cursor: pointer
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))
+
+  .next-button
+    position: absolute
+    right: 8em
+    padding: 2em
+    opacity: 0
+    stroke-width: 4
+    stroke-linecap: square
+    stroke: white
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))
+    transition: opacity .2s
+
+    &.invisible
+      display: none
+
+    &:hover, &:active, &:focus
+      opacity: 1
+      cursor: pointer
+
+  img
+    display: block
+    max-width: 100%
+    max-height: calc(100% - 2em)
+    cursor: pointer
+
+    &:hover ~ .next-button
+      opacity: .2
+
+  .picture-text
+    margin-top: 1em
+    color: #999;

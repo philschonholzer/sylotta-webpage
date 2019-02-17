@@ -24,7 +24,7 @@ const SEO = ({ title: titlePage, description: descPage, image: imagePage }) => (
     {({ location }) => (
       <StaticQuery
         query={graphql`
-          query HeadingQuery {
+          query SeoQuery {
             site {
               siteMetadata {
                 title

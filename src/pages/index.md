@@ -4,9 +4,9 @@ title: SY Lotta
 tagline: Mal sehen wo es uns hinspühlt...
 image: /img/hero.jpg
 intro:
-  heading: Unsere Reise
+  heading: Willkommen
   image:
-    alt: A close-up of a paper filter filled with ground coffee
+    alt: Die Natur der Azoren
     image: /img/dsc00063.jpg
   text: >
     Wir berichten so regelmässig von unserer Segelreise, wie es der Zugang und
@@ -16,4 +16,3 @@ blog:
   text: |
     In unserem Blog findet ihr regelmässig neue Berichte über unsere Reise.
 ---
-

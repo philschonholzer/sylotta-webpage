@@ -5,9 +5,12 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  return graphql(`
+  const other = graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(
+        limit: 1000
+        filter: { frontmatter: { templateKey: { regex: "/post|page/" } } }
+      ) {
         edges {
           node {
             id
@@ -27,22 +30,71 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const { edges } = result.data.allMarkdownRemark
 
-    posts.forEach(edge => {
-      const { id } = edge.node
+    edges.forEach(({ node }) => {
+      const context = {
+        id: node.id,
+      }
       createPage({
-        path: edge.node.fields.slug,
+        path: node.fields.slug,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`,
+          `src/templates/${String(node.frontmatter.templateKey)}.js`,
         ),
         // additional data can be passed via context
-        context: {
-          id,
-        },
+        context,
       })
     })
   })
+
+  const galleryPosts = graphql(`
+    {
+      allMarkdownRemark(
+        limit: 1000
+        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: { frontmatter: { templateKey: { regex: "/gallery/" } } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              templateKey
+              title
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
+
+    const { edges } = result.data.allMarkdownRemark
+
+    edges.forEach(({ node }, index) => {
+      const context = {
+        next: index === 0 ? null : edges[index - 1].node,
+        prev: index === edges.length - 1 ? null : edges[index + 1].node,
+        id: node.id,
+      }
+
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve(
+          `src/templates/${String(node.frontmatter.templateKey)}.js`,
+        ),
+        // additional data can be passed via context
+        context,
+      })
+    })
+  })
+
+  return Promise.all([other, galleryPosts])
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

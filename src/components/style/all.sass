@@ -46,6 +46,12 @@ section
   &.even:nth-child(2n+1)
     background-color: #eee
 
+
+h2 small
+  color: $lotta-blue-light
+  font-size: 0.50em
+
+
 .split-col
   display: grid
   grid-gap: 4em
@@ -79,7 +85,8 @@ textarea
 
 
 .button 
-  display: inline-block
+  display: inline-flex
+  align-items: center
   font-weight: 800
   padding: .5em 1.8em
   border: 2px solid $primary
@@ -88,6 +95,21 @@ textarea
   text-decoration: none
   text-align: center
   transition: transform .1s, color .1s, background-color .4s
+
+
+  svg
+    display: block
+    height: 1em
+    stroke-width: .6em
+    stroke-linecap: square
+    stroke: currentcolor
+
+    &.next-button
+      margin-left: .6em
+
+    &.prev-button
+      margin-right: .6em
+
 
   &:hover 
     color: $primary-invert
