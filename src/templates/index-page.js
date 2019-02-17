@@ -67,7 +67,7 @@ export const IndexPageTemplate = ({
               <div className="container split-col">
                 <div>
                   <h2 className="has-text-weight-bold is-size-2">
-                    Letzte Segelfahrten
+                    Letzter Reisebericht
                   </h2>
                   <p>
                     <Link className="has-text-primary" to={post.fields.slug}>
