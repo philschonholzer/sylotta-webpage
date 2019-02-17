@@ -36,7 +36,7 @@ const Navbar = () => (
           </div>
           <div className="menu">
             <Link to={gallery.edges[0].node.fields.slug}>Gallerie</Link>
-            <Link to="/trips">Segelfahrten</Link>
+            <Link to="/trips">Reise</Link>
             <Link to="/about">Über uns</Link>
             <Link to="/contact">Kontakt</Link>
             <a className="button" href="https://wolfschon.blogspot.com">

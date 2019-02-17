@@ -88,7 +88,7 @@ export const IndexPageTemplate = ({
             ) : (
               <div className="container split-col">
                 <h2 className="has-text-weight-bold is-size-2">
-                  Letzte Segelfahrten
+                  Letzter Reisebericht
                 </h2>
                 <div>
                   <div
