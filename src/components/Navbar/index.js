@@ -35,10 +35,10 @@ const Navbar = () => (
             Menu
           </div>
           <div className="menu">
-            <Link to={gallery.edges[0].node.fields.slug}>Gallerie</Link>
-            <Link to="/trips">Reise</Link>
             <Link to="/about">Über uns</Link>
+            <Link to="/trips">Reise</Link>
             <Link to="/contact">Kontakt</Link>
+            <Link to={gallery.edges[0].node.fields.slug}>Gallerie</Link>
             <a className="button" href="https://wolfschon.blogspot.com">
               Zum Blog &#8599;
             </a>
