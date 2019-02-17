@@ -12,7 +12,7 @@ const GalleryPostTemplate = ({ post, next, prev }) => (
   <article id="gallery-page">
     <header>
       <div className="container">
-        <h1>Gallery</h1>
+        <h1>Gallerie</h1>
       </div>
     </header>
     <section>

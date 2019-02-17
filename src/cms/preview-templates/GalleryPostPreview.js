@@ -25,7 +25,7 @@ const GalleryPostPreview = ({ entry, widgetFor, getAsset }) => {
     <article id="gallery-page">
       <header>
         <div className="container">
-          <h1>Gallery</h1>
+          <h1>Gallerie</h1>
         </div>
       </header>
       <section>
