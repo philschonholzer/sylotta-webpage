@@ -40,19 +40,21 @@ const GalleryPostPreview = ({ entry, widgetFor, getAsset }) => {
           {widgetFor('body')}
           <div className="gallery-wrapper">
             <div className="gallery">
-              {[mainImage, ...images].map(({ image, text }) => (
-                <div key={image.id} className="item landscape">
-                  <PreviewCompatibleImage
-                    imageInfo={{ image, alt: text }}
-                    imageStyle={{
-                      height: '100%',
-                      width: '100%',
-                      objectFit: 'cover',
-                    }}
-                  />
-                  <p className="image-overlay">{text}</p>
-                </div>
-              ))}
+              {[mainImage, ...images]
+                .filter(i => i.image)
+                .map(({ image, text }) => (
+                  <div key={image.id} className="item landscape">
+                    <PreviewCompatibleImage
+                      imageInfo={{ image, alt: text }}
+                      imageStyle={{
+                        height: '100%',
+                        width: '100%',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <p className="image-overlay">{text}</p>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
