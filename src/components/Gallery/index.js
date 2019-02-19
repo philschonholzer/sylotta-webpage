@@ -11,7 +11,7 @@ const Gallery = ({ images, mainImage }) => {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(0)
 
-  const mergedImages = [mainImage, ...images]
+  const mergedImages = [mainImage, ...images].filter(i => i.image)
 
   return (
     <>
