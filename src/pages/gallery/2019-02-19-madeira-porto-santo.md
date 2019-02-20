@@ -6,7 +6,8 @@ mainImage:
   image: /img/dsc04490.jpg
   text: Westende von Porto Santo
 images:
-  - {}
+  - image: /img/dsc03600.jpg
+    text: 'Porta Santo, Nordosten'
   - image: /img/dsc04732.jpg
     text: 'Madeira, Terrassenanbau'
 ---
