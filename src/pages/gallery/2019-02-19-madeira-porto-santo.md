@@ -10,5 +10,7 @@ images:
     text: 'Madeira, Nordosten'
   - image: /img/dsc04732.jpg
     text: 'Madeira, Terrassenanbau'
+  - image: /img/dsc03668.jpg
+    text: Madeira kann gebirgig sein!
 ---
 Das Archipel von Madeira und die Insel von Porto Santo liefen wir zweimal an: 2017 und 2018. Die Bilder sind aus beiden Jahren.
