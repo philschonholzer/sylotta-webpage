@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "sylotta-webpage",
+  "description": "Webpage of sylotta.ch",
+  "version": "1.1.4",
+  "author": "Philip Schönholzer",
   "dependencies": {
     "gatsby": "^2.0.66",
     "gatsby-image": "^2.0.23",
