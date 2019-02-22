@@ -7,5 +7,6 @@ mainImage:
   text: 'Bressey Lighthouse Ankunft in Lerwick, Shetland'
 images:
   - {}
+  - image: /img/dsc09198.jpg
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
