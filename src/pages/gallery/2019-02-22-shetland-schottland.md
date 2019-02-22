@@ -8,5 +8,7 @@ mainImage:
 images:
   - {}
   - image: /img/dsc09198.jpg
+  - image: /img/dsc09274.jpg
+    text: Papageientaucher
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
