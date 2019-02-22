@@ -8,4 +8,4 @@ mainImage:
 images:
   - {}
 ---
-Im Juny 2016 überquerten wir die Nordsee von Norwegen nach Shetland
+Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
