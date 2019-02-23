@@ -31,26 +31,27 @@ const Gallery = ({ images, mainImage }) => {
     setIndex(preIndex => (preIndex > 0 ? preIndex - 1 : preIndex))
   }
 
-  useKey(
-    pressedKey => {
-      switch (pressedKey) {
-        case 27:
-          setOpen(false)
-          break
-        case 37:
-          prevModalImage({ stopPropagation: () => null })
-          break
-        case 39:
-          nextModalImage({ stopPropagation: () => null })
-          break
-        default:
-      }
-    },
-    {
-      detectKeys: [27, 37, 39],
-    },
-  )
-
+  if (typeof window !== 'undefined') {
+    useKey(
+      pressedKey => {
+        switch (pressedKey) {
+          case 27:
+            setOpen(false)
+            break
+          case 37:
+            prevModalImage({ stopPropagation: () => null })
+            break
+          case 39:
+            nextModalImage({ stopPropagation: () => null })
+            break
+          default:
+        }
+      },
+      {
+        detectKeys: [27, 37, 39],
+      },
+    )
+  }
   return (
     <>
       <div className="gallery">
