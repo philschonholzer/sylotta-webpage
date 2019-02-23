@@ -12,5 +12,8 @@ images:
     text: Ein paar dezente Wellchen hatte wir schon...
   - image: /img/dsc09274.jpg
     text: Papageientaucher
+  - image: /img/dsc00893.jpg
+    text: |
+      Nordwestküste, Mainland, Shetland
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
