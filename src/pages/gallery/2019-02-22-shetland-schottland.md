@@ -6,8 +6,10 @@ mainImage:
   image: /img/dsc09220.jpg
   text: 'Bressey Lighthouse Ankunft in Lerwick, Shetland'
 images:
-  - {}
+  - image: /img/dsc00973.jpg
+    text: Der Hafen von Fair Isle
   - image: /img/dsc09198.jpg
+    text: Ein paar dezente Wellchen hatte wir schon...
   - image: /img/dsc09274.jpg
     text: Papageientaucher
 ---
