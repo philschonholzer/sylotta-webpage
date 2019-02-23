@@ -10,7 +10,8 @@
     ],
     "prettier/prettier": "error",
     "react/require-default-props": 0,
-    "react/forbid-prop-types": 0
+    "react/forbid-prop-types": 0,
+    "no-nested-ternary": "off"
   },
   "env": {
     "browser": true
