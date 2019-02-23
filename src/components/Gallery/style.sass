@@ -10,6 +10,13 @@ div.gallery
 
   .item
     position: relative
+    background: none
+    color: inherit
+    border: none
+    padding: 0
+    margin: 0
+    font: inherit
+    outline: inherit
     cursor: pointer
     
     &.portrait
@@ -57,7 +64,7 @@ div.modal
   right: 0
   left: 0
   bottom: 0
-  padding: 2rem
+  padding: 1rem
   background-color: hsla(0, 0%, 0%, 0.98)
   text-align: center
   z-index: 999
@@ -88,16 +95,26 @@ div.modal
     &:hover, &:active, &:focus
       opacity: 1
       cursor: pointer
-
-  img
-    display: block
-    max-width: 100%
-    max-height: calc(100% - 2em)
+    
+  .gatsby-image-wrapper
+    height: 100%
+    width: 100%
     cursor: pointer
+
+    > div 
+      display: none
+
+    > img 
+      position: relative !important
+    
+    img 
+      max-height: 100%
+      max-width: 100%
+      object-fit: contain !important
 
     &:hover ~ .next-button
       opacity: .2
 
   .picture-text
     margin-top: 1em
-    color: #999;
+    color: #999
