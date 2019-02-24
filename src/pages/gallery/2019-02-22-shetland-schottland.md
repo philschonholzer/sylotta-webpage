@@ -21,5 +21,7 @@ images:
     text: Einfahrt in den Hafen von Fair Isle
   - image: /img/dsc01495.jpg
     text: 'Abendstimmung, Hafeneinfahrt Kirkwall, Orkney Islands'
+  - image: /img/dsc01531.jpg
+    text: 'St. Magnus Cathedral, Kirkwall, Orkney Islands'
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
