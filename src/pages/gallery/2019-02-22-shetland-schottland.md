@@ -19,5 +19,7 @@ images:
     text: 'Sumburgh Head Lighthouse, Mainland, Shetland'
   - image: /img/dsc09324.jpg
     text: Einfahrt in den Hafen von Fair Isle
+  - image: /img/dsc01495.jpg
+    text: 'Abendstimmung, Hafeneinfahrt Kirkwall, Orkney Islands'
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
