@@ -15,5 +15,7 @@ images:
   - image: /img/dsc00893.jpg
     text: |
       Nordwestküste, Mainland, Shetland
+  - image: /img/dsc00868.jpg
+    text: 'Sumburgh Head Lighthouse, Mainland, Shetland'
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
