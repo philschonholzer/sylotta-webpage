@@ -23,5 +23,7 @@ images:
     text: 'Abendstimmung, Hafeneinfahrt Kirkwall, Orkney Islands'
   - image: /img/dsc01531.jpg
     text: 'St. Magnus Cathedral, Kirkwall, Orkney Islands'
+  - image: /img/dsc01524.jpg
+    text: 'Alter Friedhof, Orkney Islands'
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
