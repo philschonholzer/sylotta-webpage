@@ -17,5 +17,7 @@ images:
       Nordwestküste, Mainland, Shetland
   - image: /img/dsc00868.jpg
     text: 'Sumburgh Head Lighthouse, Mainland, Shetland'
+  - image: /img/dsc09324.jpg
+    text: Einfahrt in den Hafen von Fair Isle
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
