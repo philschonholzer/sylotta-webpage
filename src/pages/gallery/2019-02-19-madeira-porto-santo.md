@@ -17,6 +17,6 @@ images:
   - image: /img/dsc04361.jpg
     text: Wanderung im Landesinnern von Porto Santo
   - image: /img/dsc03349.jpg
-    text: Das Westende von Madeira
+    text: Das Ostende von Madeira
 ---
 Das Archipel von Madeira und die Insel von Porto Santo liefen wir zweimal an: 2017 und 2018. Die Bilder sind aus beiden Jahren.
