@@ -12,5 +12,7 @@ images:
     text: 'Madeira, Terrassenanbau'
   - image: /img/dsc03668.jpg
     text: Madeira kann gebirgig sein!
+  - image: /img/img_20170520_201029.jpg
+    text: Hafen von Porto Santo im Abendlicht
 ---
 Das Archipel von Madeira und die Insel von Porto Santo liefen wir zweimal an: 2017 und 2018. Die Bilder sind aus beiden Jahren.
