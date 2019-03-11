@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: SY Lotta
-tagline: Mal sehen wo es uns hinspühlt...
+tagline: Mal sehen wo es uns hinspült...
 image: /img/hero.jpg
 intro:
   heading: Willkommen
@@ -16,3 +16,4 @@ blog:
   text: |
     In unserem Blog findet ihr regelmässig neue Berichte über unsere Reise.
 ---
+
