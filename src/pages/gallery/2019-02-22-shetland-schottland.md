@@ -33,5 +33,7 @@ images:
     text: 'Lossiemouth, Schottland'
   - image: /img/dsc01627.jpg
     text: In einer Schleuse am Caledonian Canal
+  - image: /img/dsc00989.jpg
+    text: 'Pub, Inverness, Schottland'
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
