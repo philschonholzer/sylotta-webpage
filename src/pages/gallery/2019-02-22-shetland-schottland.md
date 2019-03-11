@@ -29,5 +29,7 @@ images:
     text: Urquhart Castles am Loch Ness
   - image: /img/dsc01620.jpg
     text: Fort Augustus am Caledonia Canal
+  - image: /img/dsc01567.jpg
+    text: 'Lossiemouth, Schottland'
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
