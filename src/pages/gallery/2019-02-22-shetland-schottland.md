@@ -25,5 +25,7 @@ images:
     text: 'St. Magnus Cathedral, Kirkwall, Orkney Islands'
   - image: /img/dsc01524.jpg
     text: 'Alter Friedhof, Orkney Islands'
+  - image: /img/dsc01008.jpg
+    text: Urquhart Castles am Loch Ness
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
