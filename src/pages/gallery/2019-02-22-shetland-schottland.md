@@ -27,5 +27,7 @@ images:
     text: 'Alter Friedhof, Orkney Islands'
   - image: /img/dsc01008.jpg
     text: Urquhart Castles am Loch Ness
+  - image: /img/dsc01620.jpg
+    text: Fort Augustus am Caledonia Canal
 ---
 Im Juni 2016 überquerten wir die Nordsee von Norwegen nach Shetland
