@@ -2,7 +2,6 @@
 templateKey: about-page
 title: Über uns
 ---
-
 Seit mehr als vierzig Jahren gehen wir zusammen durch dick und dünn. Wir haben drei Jungs grossgezogen, sind ein paar Jahre in Amerika gewesen, haben in der Schweiz einen eigenen Betrieb gegründet und immer wieder langjährige Weiterbildungen absolviert. Mit dem Wohnmobil sind wir jahrelang in den Ferien in ganz Europa herumgezogen. 2003 sahen wir in der Bretagne eine kleine Segelyacht in die Karibik auslaufen. Dies war die Initialzündung für das "Projekt Lotta", welches im April endlich beginnt.
 
 Um segeln zu lernen kauften wir im jugendlichen Übermut eine "Fireball"-Jolle, ein für Anfänger viel zu scharfes Teil. Wir wurden aber von der Fireball-Klasse herzlich aufgenommen und gut betreut, so dass wir nach einigen Jahren und gefühlten tausend Kenterungen, an den Regatten nicht jedesmal als letzte ins Ziel kamen.
