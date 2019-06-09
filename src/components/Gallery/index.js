@@ -64,7 +64,12 @@ const Gallery = ({ images, mainImage }) => {
             )}`}
             onClick={openModal(i)}
           >
-            <PreviewCompatibleImage imageInfo={{ image, alt: text }} />
+            <PreviewCompatibleImage
+              imageInfo={{
+                childImageSharp: image.preview,
+                alt: text,
+              }}
+            />
             <p className="image-overlay">{text}</p>
           </button>
         ))}

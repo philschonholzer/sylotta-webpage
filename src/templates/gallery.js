@@ -108,6 +108,11 @@ export const galleryPostQuery = graphql`
                 src
               }
             }
+            preview: childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
           text
         }
@@ -115,6 +120,11 @@ export const galleryPostQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 1200) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+            preview: childImageSharp {
+              fluid(maxWidth: 200) {
                 ...GatsbyImageSharpFluid
               }
             }
